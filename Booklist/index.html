@@ -33,7 +33,11 @@
         <input type="text" id="author" class="full-width">
       </div>
       <div>
-        <input type="submit" value="Submit"  class="primary-button">
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" class="full-width">
+      </div>
+      <div>
+        <input type="submit" value="Add"  class="primary-button">
       </div>
     </form>
     <table class="full-width">
@@ -41,24 +45,13 @@
         <tr>
           <th>Title</th>
           <th>Author</th>
-          <th></th>
+          <th>ISBN</th>
         </tr>
       </thead>
       <tbody id="book-list">
-        <tr class="book-row">
-          <td>Canery Row</td>
-          <td>John Stienbeck</td>
-          <td><a href="#" class="delete">X</a></td>
-        </tr>
-        <tr class="book-row">
-          <td>Frankenstien</td>
-          <td>Mary Shelly</td>
-          <td><a href="#" class="delete">X</a></td>
-        </tr>
       </tbody>
     </table>
   </div>
-  <script src="dom.js"></script>
-  <script src="listeners.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
