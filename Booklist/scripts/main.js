@@ -13,17 +13,22 @@ class UI {
     const row = document.createElement('tr');
     row.classList.add("book-row");
     // Insert cols
-    row.innerHTML = `
-      <td>${book.title}</td>
-      <td>${book.author}</td>
-      <td class="isbn">${book.isbn}</td>
-      <td><a href="#" class="delete">X</a></td>
-    `;
-    
+    row.innerHTML = `<td>${book.title}</td>
+                     <td>${book.author}</td>
+                     <td class="isbn">${book.isbn}</td>
+                     <td><a href="#" class="delete">X</a></td>`;
     list.appendChild(row);
 
     // Write book to local storage
     localStorage.setItem(book.isbn, `["${book.title}","${book.author}"]`);
+  }
+  
+  deleteBook(target) {
+    if(target.className === 'delete') {
+      const key = target.parentElement.parentElement.querySelector(".isbn");
+      localStorage.removeItem(key.innerText);
+      target.parentElement.parentElement.remove();
+    }
   }
 
   showAlert(message, className) {
@@ -46,14 +51,6 @@ class UI {
     }, 3000);
   }
 
-  deleteBook(target) {
-    if(target.className === 'delete') {
-      const key = target.parentElement.parentElement.querySelector(".isbn");
-      // console.log(key.innerText);
-      localStorage.removeItem(key.innerText);
-      target.parentElement.parentElement.remove();
-    }
-  }
 
   clearFields() {
     document.getElementById('title').value = '';
