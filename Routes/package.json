@@ -1,0 +1,15 @@
+{
+  "name": "noderoutes",
+  "version": "1.0.0",
+  "description": "Lesson on routes, queries, and parameters",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dennis Vickers",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
